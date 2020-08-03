@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8VYIk+pUz7qTFNFqJoB55XPs+g7oZdX/6GJ2XVkc4JRg2nqlpB5RttsSm02CywPyEMoiub4liri6MllzbJqv0Q==",
+  "success": true,
+  "projectFilePath": "C:\\dev\\property-manager\\PropertyManager\\PropertyManager\\PropertyManager.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Elliot\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.9.10\\microsoft.visualstudio.azure.containers.tools.targets.1.9.10.nupkg.sha512"
+  ],
+  "logs": []
+}
