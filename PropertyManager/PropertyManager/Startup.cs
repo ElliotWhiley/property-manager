@@ -23,6 +23,7 @@ namespace PropertyManager
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WebScraperService>();
+            services.AddSingleton<TenancyService>();
             services.AddSingleton<OauthService>();
             services.AddSingleton<WeatherForecastService>();
         }
