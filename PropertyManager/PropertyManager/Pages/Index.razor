@@ -1,5 +1,33 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+@using PropertyManager.Data
+@inject WebScraperService WebScraperService
 
-Welcome to your new app.
+<h1>Yield</h1>
+<input type="search" @bind-value="@tradeMeListingUrl">
+<button class="btn btn-primary" @onclick="SearchProperty">Search</button>
+
+@if (property != null) {
+    <table class="table">
+        <tbody>
+            <tr>
+                <td class="font-weight-bold">Address</td>
+                <td>@property.Address</td>
+            </tr>
+            <tr>
+                <td class="font-weight-bold">CV</td>
+                <td>@property.Cv</td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    string tradeMeListingUrl;
+    Property property;
+
+    async Task SearchProperty()
+    {
+        property = await WebScraperService.GetPropertyAsync(tradeMeListingUrl);
+    }
+}
