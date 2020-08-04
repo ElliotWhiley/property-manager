@@ -2,6 +2,7 @@
 
 @using PropertyManager.Data
 @inject WebScraperService WebScraperService
+@inject TenancyService TenancyService
 
 <h1>Yield</h1>
 <input type="search" @bind-value="@tradeMeListingUrl">
@@ -15,8 +16,8 @@
                 <td>@property.Address</td>
             </tr>
             <tr>
-                <td class="font-weight-bold">CV</td>
-                <td>@property.Cv</td>
+                <td class="font-weight-bold">Market Rent</td>
+                <td>@property.MarketRent</td>
             </tr>
         </tbody>
     </table>
@@ -29,5 +30,7 @@
     async Task SearchProperty()
     {
         property = await WebScraperService.GetPropertyAsync(tradeMeListingUrl);
+        decimal.TryParse(await TenancyService.GetMarketRent("Test Suburb", 3), out var marketRent);
+        property.MarketRent = marketRent;
     }
 }
