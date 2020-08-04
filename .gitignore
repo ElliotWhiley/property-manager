@@ -1,0 +1,6 @@
+bin/
+obj/
+*.suo
+*.cache
+*.csproj.user
+/PropertyManager/.vs/PropertyManager/config/applicationhost.config
