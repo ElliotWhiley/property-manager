@@ -18,7 +18,7 @@ namespace PropertyManager.Data
         {
             var url = new Uri(propertyUrl);
             if (url.Host != Configuration["TradeMeHostUrl"]) {
-                throw new ArgumentException("Url provided is not hosted on Trade Me");
+                throw new ArgumentException("Only Trade Me listings are supported");
             }
 
             var web = new HtmlAgilityPack.HtmlWeb();
