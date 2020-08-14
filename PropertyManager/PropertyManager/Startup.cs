@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using PropertyManager.Data;
 
 namespace PropertyManager
@@ -22,6 +24,7 @@ namespace PropertyManager
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            services.AddSingleton<IWebDriver, ChromeDriver>();
             services.AddSingleton<WebScraperService>();
             services.AddSingleton<TenancyService>();
             services.AddSingleton<OauthService>();
