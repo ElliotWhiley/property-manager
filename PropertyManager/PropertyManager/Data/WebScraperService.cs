@@ -14,7 +14,7 @@ namespace PropertyManager.Data
             Configuration = configuration;
         }
 
-        public async Task<Property> GetPropertyAsync(string propertyUrl)
+        public async Task<Property> GetProperty(string propertyUrl)
         {
             var url = new Uri(propertyUrl);
             if (url.Host != Configuration["TradeMeHostUrl"]) {

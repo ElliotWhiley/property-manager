@@ -29,7 +29,7 @@
 
     async Task SearchProperty()
     {
-        property = await WebScraperService.GetPropertyAsync(tradeMeListingUrl);
+        property = await WebScraperService.GetProperty(tradeMeListingUrl);
         decimal.TryParse(await TenancyService.GetMarketRent("Test Suburb", 3), out var marketRent);
         property.MarketRent = marketRent;
     }
